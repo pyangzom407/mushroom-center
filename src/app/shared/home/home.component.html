@@ -5,22 +5,23 @@
         <img src="assets/images/m-loog-3.png" alt="logo" class="rounded-full">
       </div>
     </div>
-    <header class="flex flex-row items-center rounded header-container w-full bg-teal-400 m-4 shadow justify-between px-6 h-[70px]">
+    <header
+      class="flex flex-row items-center rounded header-container w-full bg-primary m-4 shadow justify-between px-6 h-[70px]">
       <div>
         <nav class="flex gap-6 text-[18px] text-gray-800">
-          <div class="flex hover:text-cyan-600">
+          <div class="flex hover:text-white">
             <i class="material-icons mr-1">house</i>
             <p class="cursor-pointer">Home</p>
           </div>
-          <div class="flex hover:text-cyan-600">
+          <div class="flex hover:text-white">
             <i class="material-icons mr-2">category</i>
-            <p class="cursor-pointer">Products</p>
+            <p class="cursor-pointer">Services</p>
           </div>
-          <div class="flex hover:text-cyan-600">
+          <div class="flex hover:text-white">
             <i class="material-icons mr-2">shop</i>
             <p class="cursor-pointer">Shop</p>
           </div>
-          <div class="flex hover:text-cyan-600">
+          <div class="flex hover:text-white">
             <i class="material-icons mr-2">tty</i>
             <p class="cursor-pointer">Contact Us</p>
           </div>
@@ -29,22 +30,43 @@
       <div class="flex text-gray-800 justify-center items-center">
         <div class="justify-center items-center mr-16 input-container relative">
           <input type="text"
-                 class="p-2 rounded` border border-gray-300 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200"
+                 class="p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring focus:ring-blue-200"
                  placeholder="Search products">
           <i class="material-icons mr-2 input-container__icon absolute cursor-pointer text-gray-500">search</i>
         </div>
         <i class="material-icons">shopping_cart</i>
-        <button class="m-4 border bg-gray-100 border-gray-600 rounded-full px-4 py-2 hover:text-red-500 fon">Register</button>
-        <button class="m-4 border bg-gray-100 border-gray-600 rounded-full px-4 py-2 hover:text-red-500">Sign In</button>
+        <button class="m-4 border bg-gray-100 border-gray-600 rounded-full px-4 py-2 hover:text-rose_red">Register
+        </button>
+        <button class="m-4 border bg-gray-100 border-gray-600 rounded-full px-4 py-2 hover:text-rose_red">Sign In
+        </button>
       </div>
     </header>
-    <div class="mt-10 justify-center items-center rounded">
-    </div>
   </div>
   <div>
-   <!-- <video controls autoplay class="fixed">
-      <source src="assets/images/mushroom-video.mp4" type="video/mp4">
-    </video>-->
+    <!-- <video controls autoplay class="fixed">
+       <source src="assets/images/mushroom-video.mp4" type="video/mp4">
+     </video>-->
 
+  </div>
+  <div class="flex home-container__slide my-2 justify-center items-center">
+    <div class="flex flex-col justify-center items-center">
+      <p class="text-3xl">Produce high quality product with reasonable price</p>
+      <div class="border border-primary h-[40vh] overflow-hidden rounded m-4 w-[60vw]">
+        <div class="flex slide-show">
+          <img *ngFor="let slide of slides" [src]="slide" class="w-full h-full" alt="slide image">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex home-container__cards m-4 gap-6">
+    <div *ngFor="let items of [1,2,3,4,5,6,7]" class="border border-light_gray w-[220px] h-[350px] rounded-lg shadow-lg shadow-light_gray">
+      <img src="assets/images/mushroom2.png" alt="card images" class="border-b border-light_gray pb-2 cursor-pointer">
+      <div class="p-2">
+        <p>product name</p>
+        <p class="italic text-gray">short description of product</p>
+        <p>product price</p>
+        <p class="underline text-rose_red italic text-end cursor-pointer">view details</p>
+    </div>
+    </div>
   </div>
 </div>
