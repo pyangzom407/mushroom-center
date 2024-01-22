@@ -1,72 +1,150 @@
-<div class="flex flex-col">
-  <div class="flex">
-    <div class="flex justify-center">
-      <div class="w-[100px] cursor-pointer">
-        <img src="assets/images/m-loog-3.png" alt="logo" class="rounded-full">
-      </div>
-    </div>
-    <header
-      class="flex flex-row items-center rounded header-container w-full bg-primary m-4 shadow justify-between px-6 h-[70px]">
-      <div>
-        <nav class="flex gap-6 text-[18px] text-gray-800">
-          <div class="flex hover:text-white">
-            <i class="material-icons mr-1">house</i>
-            <p class="cursor-pointer">Home</p>
-          </div>
-          <div class="flex hover:text-white">
-            <i class="material-icons mr-2">category</i>
-            <p class="cursor-pointer">Services</p>
-          </div>
-          <div class="flex hover:text-white">
-            <i class="material-icons mr-2">shop</i>
-            <p class="cursor-pointer">Shop</p>
-          </div>
-          <div class="flex hover:text-white">
-            <i class="material-icons mr-2">tty</i>
-            <p class="cursor-pointer">Contact Us</p>
-          </div>
-        </nav>
-      </div>
-      <div class="flex text-gray-800 justify-center items-center">
-        <div class="justify-center items-center mr-16 input-container relative">
-          <input type="text"
-                 class="p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring focus:ring-blue-200"
-                 placeholder="Search products">
-          <i class="material-icons mr-2 input-container__icon absolute cursor-pointer text-gray-500">search</i>
+<div class="flex flex-col overflow-x-hidden">
+  <header
+    class="flex flex-row justify-around items-center header-container rounded shadow bg-white fixed h-[70px] w-full">
+    <span class="text-[36px] text-primary font-bold">Samsara Firming</span>
+    <div class="flex gap-6 text-gray-500">
+      <ng-container *ngFor="let nav of navbars">
+        <div class="flex hover:text-light_red">
+          <i class="material-icons mr-1">{{nav.icon}}</i>
+          <p class="cursor-pointer">{{nav.text}}</p>
         </div>
-        <i class="material-icons">shopping_cart</i>
-        <button class="m-4 border bg-gray-100 border-gray-600 rounded-full px-4 py-2 hover:text-rose_red">Register
-        </button>
-        <button class="m-4 border bg-gray-100 border-gray-600 rounded-full px-4 py-2 hover:text-rose_red">Sign In
-        </button>
+      </ng-container>
+      <!-- <div class="flex hover:text-white hover:text-primary">
+         <i class="material-icons mr-2">category</i>
+         <p class="cursor-pointer">Services</p>
+       </div>
+       <div class="flex hover:text-white hover:text-primary">
+         <i class="material-icons mr-2">shop</i>
+         <p class="cursor-pointer">Shop</p>
+       </div>
+       <div class="flex hover:text-white hover:text-primary">
+         <i class="material-icons mr-2">tty</i>
+         <p class="cursor-pointer">Contact Us</p>
+       </div>-->
+    </div>
+    <div class="flex flex-row justify-center items-center gap-4">
+      <!-- <div class="justify-center items-center input-container relative">
+         <input type="text"
+                class="p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring focus:ring-blue-200"
+                placeholder="Search products">
+         <i class="material-icons mr-2 input-container__icon absolute cursor-pointer text-gray-500">search</i>
+       </div>-->
+      <i class="material-icons cursor-pointer">search</i>
+      <i class="material-icons cursor-pointer">shopping_cart</i>
+      <i class="material-icons cursor-pointer">person</i>
+    </div>
+  </header>
+  <div class="pp">
+    <section class="flex flex-row justify-around items-center mt-28 w-[100vw]">
+      <div class="w-[500px]">
+        <p class="text-rose_red text-[24px]">100% Organic Foods</p>
+        <p class="text-primary text-[60px]">Organic Veggies & Fruits Foods</p>
       </div>
-    </header>
-  </div>
-  <div>
-    <!-- <video controls autoplay class="fixed">
-       <source src="assets/images/mushroom-video.mp4" type="video/mp4">
-     </video>-->
-
-  </div>
-  <div class="flex home-container__slide my-2 justify-center items-center">
-    <div class="flex flex-col justify-center items-center">
-      <p class="text-3xl">Produce high quality product with reasonable price</p>
-      <div class="border border-primary h-[40vh] overflow-hidden rounded m-4 w-[60vw]">
-        <div class="flex slide-show">
-          <img *ngFor="let slide of slides" [src]="slide" class="w-full h-full" alt="slide image">
+      <div class="flex home-container__slide justify-end items-center">
+        <div class="flex flex-col justify-center items-center">
+          <p class="italic text-[18px] text-white font-bold">Produce high quality product with reasonable price</p>
+          <div class="overflow-hidden rounded-2xl m-4 h-[34vh] w-[44vw]">
+            <div class="flex slide-show">
+              <img *ngFor="let slide of slides" [src]="slide" class="w-full h-full" alt="slide image">
+              <div class="text-overlay">
+                <h1>Your Text Here</h1>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
+  </div>
+  <div class="flex flex-row justify-center items-center services">
+    <div *ngFor="let services of service" class="flex flex-col items-center bg-bg_color p-8 mx-4 my-12 rounded-lg">
+      <p class="flex justify-center items-center bg-light_red rounded-full p-4">
+        <i class="material-icons cursor-pointer text-white text-[40px]">{{services.icon}}</i>
+      </p>
+      <p class="text-20px font-bold">{{services.label}}</p>
+      <p class="text-gray">{{services.hint}}</p>
     </div>
   </div>
-  <div class="flex home-container__cards m-4 gap-6">
-    <div *ngFor="let items of [1,2,3,4,5,6,7]" class="border border-light_gray w-[220px] h-[350px] rounded-lg shadow-lg shadow-light_gray">
-      <img src="assets/images/mushroom2.png" alt="card images" class="border-b border-light_gray pb-2 cursor-pointer">
-      <div class="p-2">
-        <p>product name</p>
-        <p class="italic text-gray">short description of product</p>
-        <p>product price</p>
-        <p class="underline text-rose_red italic text-end cursor-pointer">view details</p>
+  <div class="product-cards flex flex-col justify-between items-center">
+    <div class="flex flex-row justify-between items-center gap-60">
+      <p class="text-[32px]">Our Organic Products</p>
+      <div class="flex">
+        <ng-container *ngFor="let item of product">
+          <p
+            class="rounded-3xl bg-bg_color hover:bg-primary hover:text-white px-4 py-2 m-4 cursor-pointer">{{item.categories}}</p>
+        </ng-container>
+      </div>
     </div>
+    <div class="flex flex-row flex-wrap justify-center items-center my-12">
+      <div *ngFor="let product of cards"
+           class="flex flex-col justify-center items-center shadow shadow-light_gray shadow-lg mx-4 rounded-lg w-[260px] pb-6 mb-10 gap-2">
+        <div class="bg-bg_color rounded-t-lg">
+          <p
+            class="m-2 rounded-lg border border-light_gray bg-primary text-white text-center w-[12vh]">{{product.product_type}}</p>
+          <img [src]="product.image" alt="product image cards" class="h-[240px] w-[260px] shadow bg_bg-color">
+        </div>
+        <p class="text-[24px]">{{product.title}}</p>
+        <p class="text-gray mx-2">{{product.sub_text}}</p>
+        <div class="flex flex-row items-center gap-6">
+          <p>NU. {{product.price}}</p>
+          <div class="flex border border-gray rounded-full hover:bg-orange cursor-pointer px-4 py-1">
+            <i class="material-icons">add_shopping_cart</i>
+            <p class="text-light_red hover:text-white">Add to cart</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-row flex-wrap justify-center items-center my-12">
+      <div *ngFor="let status of offer"
+           class="flex flex-col justify-center items-center border shadow shadow-gray shadow-lg bg-light_red mx-4 rounded-lg w-[400px] pb-8 mb-10 gap-4">
+        <div class="bg-white rounded-t-lg">
+          <img [src]="status.image" alt="product image cards" class="h-[280px] w-[400px]">
+        </div>
+        <div class="bg-primary mt-[-40px] p-4 rounded">
+          <p class="text-[24px]">{{status.product_status}}</p>
+          <p class="text-gray mx-2 text-[28px]">{{status.offer}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col justify-center">
+      <p class="text-[32px] mb-6">Fresh Organic Vegetables</p>
+      <div class="flex flex-row flex-wrap">
+        <div *ngFor="let veg of vegetables"
+             class="flex flex-col shadow shadow-light_gray bg-bg_color shadow-lg mx-4 rounded-lg w-[260px] pb-6 mb-10 gap-2">
+          <div class="bg-white rounded-t-lg">
+            <p class="border border-light_gray bg-orange text-white text-center">{{veg.product_type}}</p>
+            <img [src]="veg.image" alt="product image cards" class="h-[240px] w-[260px] shadow bg_white">
+          </div>
+          <p class="text-[24px] mx-2">{{veg.title}}</p>
+          <p class="text-gray mx-2">{{veg.sub_text}}</p>
+          <div class="flex flex-row items-center gap-6 mx-2">
+            <p>NU. {{veg.price}}</p>
+            <div class="flex border border-gray rounded-full hover:bg-orange cursor-pointer px-4 py-1">
+              <i class="material-icons">add_shopping_cart</i>
+              <p class="text-primary hover:text-white">Add to cart</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="my-12 flex flex-col justify-center items-center">
+      <p class="text-[40px]">Bestseller Products</p>
+      <p class="text-gray">we are here to produce only quality product with 100% organic and looking for customers
+        benefits by selling at reasonable prices for all products</p>
+      <div class="flex flex-row flex-wrap justify-center items-center my-12">
+        <div *ngFor="let product of cards"
+             class="flex justify-center items-center bg-bg_color shadow shadow-light_gray shadow-lg mx-4 rounded-lg h-[220px] w-[400px] mb-10">
+          <img [src]="product.image" alt="product image cards"
+               class="h-[200px] w-[200px] shadow bg_bg-color rounded-full bg-white">
+          <div class="ml-8">
+            <p class="text-[24px]">{{product.title}}</p>
+            <p class="my-2">NU. {{product.price}}</p>
+            <div class="flex border border-gray rounded-full border-primary hover:bg-orange cursor-pointer px-4 py-1">
+              <i class="material-icons">add_shopping_cart</i>
+              <p class="text-light_red hover:text-white">Add to cart</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
