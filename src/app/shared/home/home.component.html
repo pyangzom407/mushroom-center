@@ -1,4 +1,4 @@
-<div class="flex flex-col overflow-x-hidden">
+<div class="flex flex-col">
   <header
     class="flex flex-row justify-around items-center header-container rounded shadow bg-white fixed h-[70px] w-full">
     <span class="text-[36px] text-primary font-bold">Samsara Firming</span>
@@ -34,34 +34,32 @@
       <i class="material-icons cursor-pointer">person</i>
     </div>
   </header>
-  <div class="pp">
+  <div class="background-slider">
     <section class="flex flex-row justify-around items-center mt-28 w-[100vw]">
       <div class="w-[500px]">
         <p class="text-rose_red text-[24px]">100% Organic Foods</p>
-        <p class="text-primary text-[60px]">Organic Veggies & Fruits Foods</p>
+        <p class="text-primary text-[64px] font-bold">Organic Veggies & Fruits Foods</p>
       </div>
       <div class="flex home-container__slide justify-end items-center">
         <div class="flex flex-col justify-center items-center">
           <p class="italic text-[18px] text-white font-bold">Produce high quality product with reasonable price</p>
-          <div class="overflow-hidden rounded-2xl m-4 h-[34vh] w-[44vw]">
+          <div class="overflow-hidden rounded-2xl m-4 h-[34vh] w-[34vw]">
             <div class="flex slide-show">
               <img *ngFor="let slide of slides" [src]="slide" class="w-full h-full" alt="slide image">
-              <div class="text-overlay">
-                <h1>Your Text Here</h1>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
   </div>
-  <div class="flex flex-row justify-center items-center services">
-    <div *ngFor="let services of service" class="flex flex-col items-center bg-bg_color p-8 mx-4 my-12 rounded-lg">
+  <div class="flex flex-row flex-wrap justify-center items-center services">
+    <div *ngFor="let services of service"
+         class="flex flex-col items-center bg-bg_color p-8 mx-4 my-12 rounded-lg hover:border border-gray cursor-pointer w-[220px] h-[220px] hover:shadow hover:shadow-gray hover:shadow-2xl">
       <p class="flex justify-center items-center bg-light_red rounded-full p-4">
         <i class="material-icons cursor-pointer text-white text-[40px]">{{services.icon}}</i>
       </p>
-      <p class="text-20px font-bold">{{services.label}}</p>
-      <p class="text-gray">{{services.hint}}</p>
+      <p class="text-20px font-bold my-2">{{services.label}}</p>
+      <p class="text-gray text-center">{{services.hint}}</p>
     </div>
   </div>
   <div class="product-cards flex flex-col justify-between items-center">
@@ -76,11 +74,12 @@
     </div>
     <div class="flex flex-row flex-wrap justify-center items-center my-12">
       <div *ngFor="let product of cards"
-           class="flex flex-col justify-center items-center shadow shadow-light_gray shadow-lg mx-4 rounded-lg w-[260px] pb-6 mb-10 gap-2">
+           class="flex flex-col justify-center items-center shadow shadow-light_gray shadow-lg mx-4 rounded-lg w-[260px] pb-6 mb-10 gap-2 hover:shadow hover:shadow-gray hover:shadow-2xl">
         <div class="bg-bg_color rounded-t-lg">
           <p
             class="m-2 rounded-lg border border-light_gray bg-primary text-white text-center w-[12vh]">{{product.product_type}}</p>
-          <img [src]="product.image" alt="product image cards" class="h-[240px] w-[260px] shadow bg_bg-color">
+          <img [src]="product.image" alt="product image cards"
+               class="h-[240px] w-[260px] bg_bg-color transition-transform duration-300 transform scale-100 hover:scale-110 cursor-pointer">
         </div>
         <p class="text-[24px]">{{product.title}}</p>
         <p class="text-gray mx-2">{{product.sub_text}}</p>
@@ -95,13 +94,14 @@
     </div>
     <div class="flex flex-row flex-wrap justify-center items-center my-12">
       <div *ngFor="let status of offer"
-           class="flex flex-col justify-center items-center border shadow shadow-gray shadow-lg bg-light_red mx-4 rounded-lg w-[400px] pb-8 mb-10 gap-4">
+           class="flex flex-col justify-center items-center border shadow shadow-gray shadow-lg bg-gray mx-4 rounded-lg w-[400px] pb-8 mb-10 gap-4 hover:shadow hover:shadow-gray hover:shadow-2xl">
         <div class="bg-white rounded-t-lg">
-          <img [src]="status.image" alt="product image cards" class="h-[280px] w-[400px]">
+          <img [src]="status.image" alt="product image cards"
+               class="h-[280px] w-[400px] transition-transform duration-300 transform scale-100 hover:scale-110 cursor-pointer">
         </div>
         <div class="bg-primary mt-[-40px] p-4 rounded">
-          <p class="text-[24px]">{{status.product_status}}</p>
-          <p class="text-gray mx-2 text-[28px]">{{status.offer}}</p>
+          <p class="text-[20px]">{{status.product_status}}</p>
+          <p class="text-white mx-2 text-[28px]">{{status.offer}}</p>
         </div>
       </div>
     </div>
@@ -109,10 +109,11 @@
       <p class="text-[32px] mb-6">Fresh Organic Vegetables</p>
       <div class="flex flex-row flex-wrap">
         <div *ngFor="let veg of vegetables"
-             class="flex flex-col shadow shadow-light_gray bg-bg_color shadow-lg mx-4 rounded-lg w-[260px] pb-6 mb-10 gap-2">
+             class="flex flex-col shadow shadow-light_gray bg-bg_color shadow-lg mx-4 rounded-lg w-[260px] pb-6 mb-10 gap-2 hover:shadow hover:shadow-gray hover:shadow-2xl">
           <div class="bg-white rounded-t-lg">
             <p class="border border-light_gray bg-orange text-white text-center">{{veg.product_type}}</p>
-            <img [src]="veg.image" alt="product image cards" class="h-[240px] w-[260px] shadow bg_white">
+            <img [src]="veg.image" alt="product image cards"
+                 class="h-[240px] w-[260px] bg_white transition-transform duration-300 transform scale-100 hover:scale-110 cursor-pointer">
           </div>
           <p class="text-[24px] mx-2">{{veg.title}}</p>
           <p class="text-gray mx-2">{{veg.sub_text}}</p>
@@ -132,9 +133,9 @@
         benefits by selling at reasonable prices for all products</p>
       <div class="flex flex-row flex-wrap justify-center items-center my-12">
         <div *ngFor="let product of cards"
-             class="flex justify-center items-center bg-bg_color shadow shadow-light_gray shadow-lg mx-4 rounded-lg h-[220px] w-[400px] mb-10">
+             class="flex justify-center items-center bg-bg_color shadow shadow-light_gray shadow-lg mx-4 rounded-lg h-[220px] w-[400px] mb-10 hover:shadow hover:shadow-gray hover:shadow-2xl">
           <img [src]="product.image" alt="product image cards"
-               class="h-[200px] w-[200px] shadow bg_bg-color rounded-full bg-white">
+               class="h-[200px] w-[200px] rounded-full bg-white transition-transform duration-300 transform scale-100 hover:scale-110 cursor-pointer">
           <div class="ml-8">
             <p class="text-[24px]">{{product.title}}</p>
             <p class="my-2">NU. {{product.price}}</p>
@@ -144,6 +145,31 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="flex flex-row flex-wrap justify-center items-center rounded-lg p-6 mx-6 mb-12 bg-cream">
+      <div *ngFor="let product of status"
+           class="flex flex-col justify-center items-center shadow border border-cream bg-white rounded-lg h-[240px] px-6 w-[268px] m-4 cursor-pointer hover:border hover:border-light_gray">
+        <img [src]="product.image" alt="services images" class="w-[10 0px] h-[100px] rounded-2xl mt-[-24px] p-2 transition-transform duration-300 transform scale-100 hover:scale-110 cursor-pointer">
+        <p class="text-[24px] text-primary text-center">{{product.product_status}}</p>
+        <p class="text-[32px]">{{product.rating}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="my-12 flex flex-col justify-center items-center">
+    <p class="text-[24px]">Our Testimonial</p>
+    <p class="text-[40px] font-bold">Feedback from our client</p>
+    <div class="flex flex-row flex-wrap justify-center items-center my-12">
+      <div *ngFor="let feedback of feedbacks"
+           class="flex flex-col bg-bg_color shadow shadow-light_gray shadow-lg mx-4 rounded-lg  mb-10 hover:shadow hover:shadow-gray hover:shadow-2xl">
+          <p class="border-b border-b-rose_red text-gray p-4 ">{{feedback.client_feedback}}</p>
+         <div class="flex flex-row items-center">
+           <img [src]="feedback.person_img" alt="product image cards" class="h-[160px] w-[160px] rounded-full bg-gray m-4">
+            <div>
+              <p class="text-[24px] font-bold">{{feedback.name}}</p>
+              <p class="text-gray mt-2">{{feedback.designation}}</p>
+            </div>
+         </div>
       </div>
     </div>
   </div>

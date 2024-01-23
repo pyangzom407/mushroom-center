@@ -19,6 +19,8 @@
   60% {transform: translateX(-100%);}
   80% {transform: translateX(-200%);}
   100% {transform: translateX(-200%);}
+  100% {transform: translateX(-300%);}
+  100% {transform: translateX(-300%);}
 }
 
 .hover-zoom-in {
@@ -30,7 +32,7 @@
   }
 }
 
-.pp {
+.background-slider {
   background: url('/assets/images/bg-image-m.jpg') no-repeat center center fixed;
   background-size: cover;
   width: 100%;

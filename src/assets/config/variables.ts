@@ -5,5 +5,6 @@ module.exports = {
   light_gray: '#C5C5C5',
   bg_color: '#f4f6f8',
   orange: '#FF8300',
-  light_red : '#FF7F7F'
+  light_red : '#FF7F7F',
+  cream: '#F9F1F0'
 }
