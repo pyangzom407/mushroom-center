@@ -1,0 +1,17 @@
+<header
+  class="flex flex-row justify-around items-center header-container rounded shadow bg-white fixed h-[70px] w-full">
+  <span class="text-[36px] text-primary font-bold">Samsara Firming</span>
+  <div class="flex gap-6 text-gray-500">
+    <ng-container *ngFor="let nav of navbars">
+      <div class="flex hover:text-light_red cursor-pointer" [routerLink]="nav.routeValue">
+        <i class="material-icons mr-1 ">{{nav.icon}}</i>
+        <p>{{nav.text | lowercase}}</p>
+      </div>
+    </ng-container>
+  </div>
+  <div class="flex flex-row justify-center items-center gap-4">
+    <i class="material-icons cursor-pointer">search</i>
+    <i class="material-icons cursor-pointer">shopping_cart</i>
+    <i id="openDialog" class="material-icons cursor-pointer" (click)="openForm()">person</i>
+  </div>
+</header>
