@@ -1,3 +1,22 @@
-<div class="p-20">
-  services works!</div>
+<div class="flex flex-col justify-center items-center pt-20">
+ 
+  <app-offers 
+  [myName]="currentName" 
+  [obj]="myBio"
+  (dataEvent)="addProduct($event)">
+</app-offers>
 
+  <p class="mt-8">This is parent component</p>
+  <p class="mb-8 text-2xl text-primary font-bold">Our features and services</p>
+  <div class="flex flex-row">
+    <ng-container *ngFor="let offer of offers"> 
+      <div class="flex flex-col justify-center items-center w-[288px] border border-light_gray rounded p-4 m-6 shadow cursor-pointer hover:border-primary">
+        <p class="rounded-full border p-4 w-20 text-center mb-4">{{offer.offerType}}</p>
+        <p class="text-gray text-center">{{offer.subtext}}</p>
+      </div>
+    </ng-container>
+  </div>
+  <ul *ngfor="let product of products">
+    <li>{{product}}</li>
+  </ul>
+</div>

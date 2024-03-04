@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "../libs/shared/home/home.component";
 import {ServicesComponent} from "../libs/shared/services/services.component";
 import {ShopComponent} from "../libs/shared/shop/shop.component";
+import { FormsComponent } from 'src/libs/shared/forms/forms.component';
 
+//routing
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +23,10 @@ const routes: Routes = [
   {
     path: 'shop',
     component: ShopComponent
+  },
+  {
+    path: 'forms',
+    component: FormsComponent
   }
 ];
 

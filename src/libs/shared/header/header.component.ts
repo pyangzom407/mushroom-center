@@ -26,8 +26,8 @@ export class HeaderComponent implements OnInit {
     { icon: 'tty',
       text: ' CONTACT',
       routeValue: '/contact'
-    },
-  ];
+   },
+];
 
   constructor() { }
 
